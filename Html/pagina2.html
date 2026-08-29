@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Deportes Unca - Inscripción</title>
+    <!-- Vinculación obligatoria a tu hoja de estilos externa del TP2 -->
+    <link rel="stylesheet" href="../css/estilos.css" type="text/css" media="screen">
+</head>
+<body>
+
+    <!-- Cabecera institucional unificada -->
+    <header id="header-principal">
+        <img src="../img/unca-logo.png"
+             alt="Logotipo Oficial de la Universidad Nacional de Catamarca"
+             width="80"
+             height="80"
+             style="margin-bottom: 15px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));"
+             title="Universidad Nacional de Catamarca">
+        <h1>Deportes Unca</h1>
+        <p>Plataforma de actividades deportivas</p>
+    </header>
+
+    <!-- Barra de navegación idéntica para consistencia en la usabilidad -->
+    <nav id="menu-navegacion">
+        <ul>
+            <li><a href="pagina1.html" title="Ir al Inicio">Inicio</a></li>
+            <li><a href="#" title="Registrarse en la plataforma">Registrarse</a></li>
+            <li><a href="pagina1.html#actividades" title="Ver actividades deportivas disponibles">Actividades deportivas</a></li>
+            <li><a href="pagina2.html" title="Formulario de inscripción">Inscribirse a una actividad</a></li>
+            <li><a href="inscripciones.html" title="Ver mis inscripciones realizadas">Mis inscripciones</a></li>
+            <li><a href="inscripciones.html" title="Cancelar una inscripción activa">Cancelar inscripción</a></li>
+            <li><a href="#" title="Iniciar Sesión">Iniciar sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section style="max-width: 650px; margin: 30px auto; padding: 0 15px;">
+            <h2>Formulario de Inscripción Deportiva</h2>
+            <p>Por favor, complete los datos del participante para procesar su solicitud de inscripción.</p>
+
+            <form id="formulario-registro" action="inscripciones.html" method="post">
+
+                <!-- SECCIÓN 1: Información de la actividad seleccionada -->
+                <fieldset class="tarjeta-deporte">
+                    <legend><strong>Información de la actividad seleccionada</strong></legend>
+
+                    <div style="text-align: center; margin: 15px 0 25px 0;">
+                        <img src="../img/voley-logo.jpg"
+                             alt="Icono representativo de Vóley"
+                             width="100"
+                             height="100"
+                             style="border-radius: 50%; border: 3px solid #702342; padding: 5px; background-color: #fefdff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+                             title="Actividad: Vóley">
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="actividad_sel">Actividad:</label>
+                        <input type="text" id="actividad_sel" name="actividad_sel" value="Vóley" disabled>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="lugar_sel">Lugar de realización:</label>
+                        <input type="text" id="lugar_sel" name="lugar_sel" value="Cancha techada" disabled>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="dia_sel">Día asignado:</label>
+                        <input type="text" id="dia_sel" name="dia_sel" value="Viernes" disabled>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="horario_sel">Horario asignado:</label>
+                        <input type="text" id="horario_sel" name="horario_sel" value="17:00 a 19:00 hs" disabled>
+                    </div>
+                </fieldset>
+
+                <!-- SECCIÓN 2: Datos del participante-->
+                <fieldset class="tarjeta-deporte">
+                    <legend><strong>Datos del participante</strong></legend>
+
+                    <div class="grupo-control">
+                        <label for="nombre_completo">Apellido y Nombre:</label>
+                        <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Escriba su apellido y nombres" maxlength="100" required>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="dni">DNI (8 dígitos):</label>
+                        <input type="text" id="dni" name="dni" inputmode="numeric" pattern="\d{8}" maxlength="8" placeholder="Ej: 45678901" required>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="usuario@unca.edu.ar" required>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3834123456" required>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label>Sexo:</label>
+                        <div class="opciones-inline">
+                            <label>
+                                <input type="radio" name="sexo" value="Femenino" required> Femenino
+                            </label>
+                            <label>
+                                <input type="radio" name="sexo" value="Masculino"> Masculino
+                            </label>
+                            <label>
+                                <input type="radio" name="sexo" value="No binario"> No binario
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- SECCIÓN 3: Información deportiva -->
+                <fieldset class="tarjeta-deporte">
+                    <legend><strong>Información deportiva</strong></legend>
+
+                    <!-- Campo: Nivel (Control de selección) -->
+                    <div class="grupo-control">
+                        <label for="nivel">Nivel:</label>
+                        <select id="nivel" name="nivel" required>
+                            <option value="">-- Seleccione un nivel --</option>
+                            <option value="Inicial">Inicial</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Avanzado">Avanzado</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label>¿Posee experiencia previa?:</label>
+                        <div class="opciones-inline">
+                            <label>
+                                <input type="radio" name="experiencia" value="Sí" required> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="experiencia" value="No"> No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grupo-control">
+                        <label for="observaciones">Observaciones:</label>
+                        <textarea id="observaciones" name="observaciones" placeholder="Escriba aquí cualquier información médica o detalle adicional relevante..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- SECCIÓN 4: Aceptación de condiciones -->
+                <div class="grupo-control-checkbox">
+                    <label>
+                        <input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones de inscripción.
+                    </label>
+                </div>
+
+                <!-- SECCIÓN 5: Botones de control (Aceptar y Cancelar) -->
+                <div style="text-align: right; margin-top: 20px; margin-bottom: 30px;">
+                    <button type="submit" class="btn btn-aceptar" style="margin-right: 10px;">Aceptar</button>
+                    <button type="reset" class="btn btn-cancelar">Cancelar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página unificado -->
+    <footer>
+          <p>Universidad Nacional de Catamarca. <br> Copyright &copy; 2026 Todos los Derechos Reservados. </p>
+    </footer>
+
+</body>
+</html>
