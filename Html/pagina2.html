@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Deportes Unca - Inscripción</title>
-    <!-- Vinculación obligatoria a tu hoja de estilos externa del TP2 -->
     <link rel="stylesheet" href="../css/estilos.css" type="text/css" media="screen">
 </head>
 <body>
 
-    <!-- Cabecera institucional unificada -->
     <header id="header-principal">
         <img src="../img/unca-logo.png"
              alt="Logotipo Oficial de la Universidad Nacional de Catamarca"
@@ -20,7 +18,6 @@
         <p>Plataforma de actividades deportivas</p>
     </header>
 
-    <!-- Barra de navegación idéntica para consistencia en la usabilidad -->
     <nav id="menu-navegacion">
         <ul>
             <li><a href="pagina1.html" title="Ir al Inicio">Inicio</a></li>
@@ -75,7 +72,6 @@
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN 2: Datos del participante-->
                 <fieldset class="tarjeta-deporte">
                     <legend><strong>Datos del participante</strong></legend>
 
@@ -120,11 +116,9 @@
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN 3: Información deportiva -->
                 <fieldset class="tarjeta-deporte">
                     <legend><strong>Información deportiva</strong></legend>
 
-                    <!-- Campo: Nivel (Control de selección) -->
                     <div class="grupo-control">
                         <label for="nivel">Nivel:</label>
                         <select id="nivel" name="nivel" required>
@@ -153,14 +147,12 @@
                     </div>
                 </fieldset>
 
-                <!-- SECCIÓN 4: Aceptación de condiciones -->
                 <div class="grupo-control-checkbox">
                     <label>
                         <input type="checkbox" id="condiciones" name="condiciones" required> Acepto las condiciones de inscripción.
                     </label>
                 </div>
 
-                <!-- SECCIÓN 5: Botones de control (Aceptar y Cancelar) -->
                 <div style="text-align: right; margin-top: 20px; margin-bottom: 30px;">
                     <button type="submit" class="btn btn-aceptar" style="margin-right: 10px;">Aceptar</button>
                     <button type="reset" class="btn btn-cancelar">Cancelar</button>
