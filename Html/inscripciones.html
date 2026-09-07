@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Deportes Unca - Mis Inscripciones</title>
+    <link rel="stylesheet" href="../css/estilos.css" type="text/css" media="screen">
+</head>
+<body>
+
+    <header id="header-principal">
+        <img src="../img/unca-logo.png"
+             alt="Logotipo Oficial de la Universidad Nacional de Catamarca"
+             width="80"
+             height="80"
+             style="margin-bottom: 15px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));"
+             title="Universidad Nacional de Catamarca">
+        <h1>Deportes Unca</h1>
+        <p>Plataforma de actividades deportivas</p>
+    </header>
+
+    <nav id="menu-navegacion">
+        <ul>
+            <li><a href="pagina1.html" title="Ir al Inicio">Inicio</a></li>
+            <li><a href="#" title="Registrarse en la plataforma">Registrarse</a></li>
+            <li><a href="pagina1.html#actividades" title="Ver actividades deportivas disponibles">Actividades deportivas</a></li>
+            <li><a href="pagina2.html" title="Formulario de inscripción">Inscribirse a una actividad</a></li>
+            <li><a href="inscripciones.html" title="Ver mis inscripciones realizadas">Mis inscripciones</a></li>
+            <li><a href="inscripciones.html" title="Cancelar una inscripción activa">Cancelar inscripción</a></li>
+            <li><a href="#" title="Iniciar Sesión">Iniciar sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section style="max-width: 900px; margin: 30px auto; padding: 0 15px;">
+            <h2>Mis Inscripciones Realizadas</h2>
+            <p>A continuación se detallan las actividades deportivas en las que se encuentra registrado actualmente:</p>
+
+            <table id="tabla-inscripciones">
+                <thead>
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Lugar</th>
+                        <th>Día</th>
+                        <th>Horario</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Fútbol</td>
+                        <td>Cancha general</td>
+                        <td>Miércoles</td>
+                        <td>19:00 hs</td>
+                        <td>Activa</td>
+                        <td>
+                            <a href="#" class="btn-cancelar-tabla" title="Dar de baja esta inscripción">Cancelar inscripción</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Vóley</td>
+                        <td>Cancha techada</td>
+                        <td>Viernes</td>
+                        <td>17:00 hs</td>
+                        <td>Activa</td>
+                        <td>
+                            <a href="#" class="btn-cancelar-tabla" title="Dar de baja esta inscripción">Cancelar inscripción</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Universidad Nacional de Catamarca. <br> Copyright &copy; 2026 Todos los Derechos Reservados. </p>
+    </footer>
+
+</body>
+</html>
