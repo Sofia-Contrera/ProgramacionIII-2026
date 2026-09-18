@@ -19,7 +19,6 @@
 
     <nav id="menu-navegacion">
         <ul>
-
             <li><a href="pagina1.html" title="Ir al Inicio">Inicio</a></li>
             <li><a href="#" title="Registrarse en la plataforma">Registrarse</a></li>
             <li><a href="pagina1.html#actividades" title="Ver actividades deportivas disponibles">Actividades deportivas</a></li>
@@ -29,57 +28,28 @@
             <li><a href="#" title="Iniciar Sesión">Iniciar sesión</a></li>
         </ul>
     </nav>
-
     <main>
+         <section id="actividades">
+        <h2>Nuestras Actividades Deportivas</h2>
+        <p>A continuación, se listan los deportes disponibles para inscribirte este ciclo lectivo:</p>
 
-        <section id="actividades">
-            <h2>Nuestras Actividades Deportivas</h2>
-
-
-            <article class="tarjeta-deporte">
-                <h3>Fútbol</h3>
-                <p>Práctica de fútbol masculino y femenino para todos los niveles, enfocado en el compañerismo y el desarrollo físico.</p>
-                <p><strong>Lugar de realización:</strong> Cancha general</p>
-                <p><strong>Días y horarios:</strong> Miércoles de 19:00 a 21:00 hs.</p>
-                <p><strong>Cupos disponibles:</strong> 22 alumnos.</p>
-                <p>
-                    <a href="pagina2.html" class="btn-inscripcion">Realizar inscripción a Fútbol</a>
-                </p>
-            </article>
-
-            <article class="tarjeta-deporte">
-                <h3>Básquet</h3>
-                <p>Entrenamientos tácticos y recreativos de básquetbol. Aprendé las reglas y técnicas de este apasionante deporte de equipo.</p>
-                <p><strong>Lugar de realización:</strong> Polideportivo norte</p>
-                <p><strong>Días y horarios:</strong> Lunes y Jueves de 18:00 a 20:00 hs.</p>
-                <p><strong>Cupos disponibles:</strong> 15 alumnos.</p>
-                <p>
-                    <a href="pagina2.html" class="btn-inscripcion">Realizar inscripción a Básquet</a>
-                </p>
-            </article>
-
-            <article class="tarjeta-deporte">
-                <h3>Vóley</h3>
-                <p>Clases de vóley mixto. Vení a jugar, mejorar tus saques, bloqueos y remates en un amigable ambiente deportivo.</p>
-                <p><strong>Lugar de realización:</strong> Cancha techada</p>
-                <p><strong>Días y horarios:</strong> Viernes de 17:00 a 19:00 hs.</p>
-                <p><strong>Cupos disponibles:</strong> 18 alumnos.</p>
-                <p>
-                    <a href="pagina2.html" class="btn-inscripcion">Realizar inscripción a Vóley</a>
-                </p>
-            </article>
-
-            <article class="tarjeta-deporte">
-                <h3>Atletismo</h3>
-                <p>Entrenamiento de pista y campo: carreras de velocidad, resistencia, salto en largo y técnicas de lanzamiento.</p>
-                <p><strong>Lugar de realización:</strong> Pista de atletismo del predio</p>
-                <p><strong>Días y horarios:</strong> Sábados de 09:00 a 11:00 hs.</p>
-                <p><strong>Cupos disponibles:</strong> 30 alumnos.</p>
-                <p>
-                    <a href="pagina2.html" class="btn-inscripcion">Realizar inscripción a Atletismo</a>
-                </p>
-            </article>
-        </section>
+        <!-- Pegá este código de la tabla vacía en su lugar: -->
+        <table id="tablaActividades" border="1" style="width: 100%; border-collapse: collapse; text-align: left; margin-top: 15px;">
+            <thead>
+                <tr>
+                    <th>Actividad</th>
+                    <th>Lugar</th>
+                    <th>Día</th>
+                    <th>Horario</th>
+                    <th>Cupos</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <!-- ¡Este ID es clave! deportes.js inyectará las filas y celdas acá adentro -->
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+    </section>
 
         <section id="contacto" class="tarjeta-deporte">
             <h2>Dónde Estamos</h2>
@@ -87,7 +57,6 @@
             <p><strong>Dirección:</strong> Av. Belgrano 300, San Fernando del Valle de Catamarca.</p>
             <p><Strong> Horarios de atención:</Strong> <br>Lunes a Jueves 08:30 a 12:30/ 15:30 a 20:30 hs. <br> Viernes 08:30 a 12:30</p>
             <p>
-
                 <a href="https://maps.app.goo.gl/VwvVAG89LfJ3o2Sy9"
                    target="_blank"
                    rel="noopener noreferrer"
@@ -99,9 +68,10 @@
             </p>
         </section>
     </main>
-
     <footer>
            <p>Universidad Nacional de Catamarca. <br> Copyright &copy; 2026 Todos los Derechos Reservados. </p>
     </footer>
+<!-- Vinculación del script de gestión de deportes -->
+    <script src="../JS/deportes.js"></script>
 </body>
 </html>
