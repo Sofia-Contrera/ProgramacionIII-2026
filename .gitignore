@@ -1,4 +1,10 @@
-deportes/
- *.sqlite3
- _pycache_/
- *.pyc
+
+# Entornos virtuales
+Envs/
+.venv/
+venv/
+
+# Archivos extras
+__pycache__/
+*.py[cod]
+.idea/
