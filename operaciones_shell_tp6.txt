@@ -1,0 +1,46 @@
+
+>>> from reservas.models import ActividadDeportiva, Horario, Inscripcion
+>>> import datetime
+
+>>> act1 = ActividadDeportiva.objects.create(nombre="Fútbol", descripcion="Entrenamiento de fútbol 11", lugar="Cancha Principal", cupo=22)
+>>> act2 = ActividadDeportiva.objects.create(nombre="Básquet", descripcion="Entrenamiento de básquet", lugar="Cancha Techada", cupo=15)
+>>> act3 = ActividadDeportiva.objects.create(nombre="Vóley", descripcion="Prácticas de vóley", lugar="Gimnasio Universitario", cupo=18)
+
+>>> h1 = Horario.objects.create(actividad=act1, dia="Lunes", hora_inicio=datetime.time(18, 0), hora_fin=datetime.time(20, 0))
+>>> h2 = Horario.objects.create(actividad=act1, dia="Miércoles", hora_inicio=datetime.time(19, 0), hora_fin=datetime.time(21, 0))
+>>> h3 = Horario.objects.create(actividad=act2, dia="Martes", hora_inicio=datetime.time(17, 0), hora_fin=datetime.time(19, 0))
+
+>>> ins1 = Inscripcion.objects.create(nombre="Sofia", apellido="Contrera", dni="40123456", estado="Activa", horario=h1)
+>>> ins2 = Inscripcion.objects.create(nombre="Carlos", apellido="Gómez", dni="38987654", estado="Activa", horario=h1)
+>>> ins3 = Inscripcion.objects.create(nombre="María", apellido="López", dni="41222333", estado="Activa", horario=h2)
+
+>>> # 1. Todas las actividades
+>>> ActividadDeportiva.objects.all()
+<QuerySet [<ActividadDeportiva: Fútbol>, <ActividadDeportiva: Básquet>, <ActividadDeportiva: Vóley>]>
+>>>
+>>> # 2. Horarios de la actividad 1
+>>> Horario.objects.filter(actividad=act1)
+<QuerySet [<Horario: Fútbol - Lunes (18:00:00 - 20:00:00)>, <Horario: Fútbol - Miércoles (19:00:00 - 21:00:00)>]>
+>>>
+>>> # 3. Inscripciones activas
+>>> Inscripcion.objects.filter(estado="Activa")
+<QuerySet [<Inscripcion: Contrera, Sofia - Fútbol - Lunes (18:00:00 - 20:00:00)>, <Inscripcion: Gómez, Carlos - Fútbol - Lunes (18:00:00 - 20:00:00)>, <Inscripcion: López, María - Fútbol - Miércoles (19:00:00 - 21:00:00)>]>
+>>>
+>>> # 4. Inscripciones del horario 1
+>>> Inscripcion.objects.filter(horario=h1)
+<QuerySet [<Inscripcion: Contrera, Sofia - Fútbol - Lunes (18:00:00 - 20:00:00)>, <Inscripcion: Gómez, Carlos - Fútbol - Lunes (18:00:00 - 20:00:00)>]>
+
+>>> # Modificar cupo:
+>>> act1.cupo = 25
+>>> act1.save()
+>>> # Cambiar estado a Cancelada:
+>>> ins1.estado = "Cancelada"
+>>> ins1.save()
+>>> # Eliminar inscripción:
+>>> ins3.delete()
+(1, {'reservas.Inscripcion': 1})
+>>> # Ver listado final:
+>>> Inscripcion.objects.all()
+<QuerySet [<Inscripcion: Contrera, Sofia - Fútbol - Lunes (18:00:00 - 20:00:00)>, <Inscripcion: Gómez, Carlos - Fútbol - Lunes (18:00:00 - 20:00:00)>]>
+
+>>> exit()
