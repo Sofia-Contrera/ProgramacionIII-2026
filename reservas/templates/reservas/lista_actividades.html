@@ -1,0 +1,30 @@
+{% extends 'reservas/base.html' %}
+
+{% block titulo %}Listado de Actividades{% endblock %}
+
+{% block contenido %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3">Actividades Deportivas Registradas</h1>
+    <a href="{% url 'reservas:agregar_actividad' %}" class="btn btn-primary">+ Nueva Actividad</a>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for actividad in actividades %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ actividad.nombre }}</h5>
+                    <p class="card-text text-muted">{{ actividad.descripcion }}</p>
+                    <p class="mb-1"><strong>Lugar:</strong> {{ actividad.lugar }}</p>
+                    <p class="mb-3"><strong>Cupo disponible:</strong> {{ actividad.cupo }} personas</p>
+                    <a href="{% url 'reservas:detalle_actividad' actividad.pk %}" class="btn btn-outline-primary btn-sm">Ver Detalles</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">No hay actividades deportivas registradas en la plataforma.</div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'reservas/base.html' %}
+
+{% block titulo %}Agregar Actividad{% endblock %}
+
+{% block contenido %}
+<div class="card shadow-sm mx-auto" style="max-width: 600px;">
+    <div class="card-header bg-primary text-white">
+        <h2 class="h5 mb-0">Registrar Nueva Actividad Deportiva</h2>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="mb-3">
+                    <label for="{{ field.id_for_label }}" class="form-label font-weight-bold">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="text-danger small mt-1">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <a href="{% url 'reservas:lista_actividades' %}" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-success">Guardar Actividad</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
