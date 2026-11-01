@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Incluimos las URLs de la aplicación reservas
-    path('', include('reservas.urls')),
+    path('', include('apps.reservas.urls')),
 ]

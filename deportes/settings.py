@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Registro mi app:
-     'reservas',
+     'apps.reservas',
 ]
 
 MIDDLEWARE = [
